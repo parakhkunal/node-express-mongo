@@ -10,6 +10,7 @@ npm install
 ```
 nodemon app
 ```
+## Run MongoDB in CLI
 ```
 mongo
 ```
