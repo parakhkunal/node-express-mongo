@@ -1,10 +1,10 @@
-A Basic RESTful node service using express and mongodb
-
 ## Setup
 ```
 npm install
 ```
 * Install MongoDB - https://docs.mongodb.com/manual/administration/install-community/
+
+* Import Postman Collecion - `BookStore.postman_collection.json`
 ## Serving/Building the project
 
 ```
