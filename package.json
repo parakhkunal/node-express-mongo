@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parakhkunal/nodetest.git"
+    "url": "git+https://github.com/parakhkunal/node-express-mongo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/parakhkunal/nodetest/issues"
+    "url": "https://github.com/parakhkunal/node-express-mongo/issues"
   },
-  "homepage": "https://github.com/parakhkunal/nodetest#readme",
+  "homepage": "https://github.com/parakhkunal/node-express-mongo#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
