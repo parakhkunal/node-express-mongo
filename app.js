@@ -4,11 +4,31 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const winston = require('winston');
+const expressWinston = require('express-winston');
+const logger = new winston.Logger({
+    transports: [new winston.transports.Console(), new winston.transports.File({ filename: './logs/api.log' })]
+});
 
 //middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'client')))
+app.use(express.static(path.join(__dirname, 'client')));
+app.use(expressWinston.logger({
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true
+    }),
+    new winston.transports.File({
+    	filename: './logs/api.log'
+    })
+  ],
+  meta: true, // optional: control whether you want to log the meta data about the request (default to true)
+  dynamicMeta: (req) => ({"body": req.body}),
+  expressFormat: true, // Use the default Express/morgan request formatting. Enabling this will override any msg if true. Will only output colors with colorize set to true
+  colorize: false // Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).
+}))
 
 Genre = require('./models/genres');
 Book = require('./models/books');
