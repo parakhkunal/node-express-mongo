@@ -61,7 +61,7 @@ module.exports.addBook = (book, callback) => {
 	Book.create(book, callback);
 }
 
-// Add Book
+// Add Books From Google Books API
 module.exports.addBooks = (results, callback) => {
 	results.forEach((book) => {
 		const mongoBook = {

@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const booksSearch = require('google-books-search');
-const path = require('path');
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const keys = require('./config/keys');
