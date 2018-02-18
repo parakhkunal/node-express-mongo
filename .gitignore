@@ -58,6 +58,9 @@ typings/
 # dotenv environment variables file
 
 A
-A
+
 B
 .env
+
+config/dev.js
+.idea

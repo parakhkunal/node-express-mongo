@@ -7,6 +7,7 @@ const booksSearch = require('google-books-search');
 const path = require('path');
 const winston = require('winston');
 const expressWinston = require('express-winston');
+const keys = require('./config/keys');
 const logger = new winston.Logger({
     transports: [new winston.transports.Console(), new winston.transports.File({ filename: './logs/api.log' })]
 });
@@ -35,7 +36,8 @@ Genre = require('./models/genres');
 Book = require('./models/books');
 
 //connection to mongoose
-mongoose.connect('mongodb://root:root@ds133582.mlab.com:33582/bookstore');
+mongoose.connect(keys.mongoose.uri);
+// mongoose.connect('mongodb://root:root@ds133582.mlab.com:33582/bookstore');
 const db = mongoose.connection;
 
 app.get('/api/genres', (req, res) => {
@@ -100,7 +102,9 @@ app.get('/api/google/books/', function (req, res) {
 });
 
 app.get('/api/books/:_id', (req, res) => {
+	console.log("meow");
 	Book.getBookById(req.params._id, (err, book) => {
+		console.log(book);
 		if(err) {
 			throw err;
 		}
