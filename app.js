@@ -131,4 +131,14 @@ app.delete('/api/books/:_id', (req, res) => {
 	});
 });
 
+app.get('/api/google/volume/', function (req, res) {
+    const volumeId = req.query.id;
+    booksSearch.lookup(volumeId, function (error, results) {
+        if (error) {
+            console.log(error);
+        }
+        res.send(results);
+    });
+});
+
 app.listen(3010);
