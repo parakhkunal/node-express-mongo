@@ -1,34 +1,44 @@
 const mongoose = require('mongoose');
 
 const bookSchema = mongoose.Schema({
+	googleBookId: {
+		type: String,
+		required: true,
+		unique: true
+	},
 	title: {
 		type: String,
 		required: true
 	},
-	genre: {
-		type: String,
+	authors: {
+		type: Array,
 		required: true
 	},
 	description: {
 		type: String
 	},
-	author: {
-		type: String,
-		required: true
-	},
 	publisher: {
 		type: String
 	},
-	pages: {
+	averageRating: {
+		type: Number
+	},
+	maturityRating: {
 		type: String
 	},
-	image_url: {
+	pageCount: {
+		type: Number
+	},
+	link: {
 		type: String
 	},
-	buy_url: {
+	images: {
+		type: Object
+	},
+	language: {
 		type: String
 	},
-	create_date: {
+	createdDate: {
 		type: Date,
 		default: Date.now
 	}
@@ -48,7 +58,29 @@ module.exports.getBookById = (id, callback) => {
 
 // Add Book
 module.exports.addBook = (book, callback) => {
+	console.log(book);return false;
 	Book.create(book, callback);
+}
+
+// Add Book
+module.exports.addBooks = (results, callback) => {
+	results.forEach((book) => {
+		const mongoBook = {
+			'googleBookId': book.id,
+			'title': book.title,
+			'authors': book.authors,
+			'description': book.description,
+			'genre': 'Thriller',
+			'publisher': book.publisher,
+			'averageRating': book.averageRating,
+			'maturityRating': book.maturityRating,
+			'pageCount': book.pageCount,
+			'link': book.link,
+			'images': book.images,
+			'language': book.language
+		};
+		Book.create(mongoBook, callback);
+	});
 }
 
 // Update Book

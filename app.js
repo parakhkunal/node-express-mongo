@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const booksSearch = require('google-books-search');
 const path = require('path');
 const winston = require('winston');
 const expressWinston = require('express-winston');
@@ -34,7 +35,7 @@ Genre = require('./models/genres');
 Book = require('./models/books');
 
 //connection to mongoose
-mongoose.connect('mongodb://localhost/bookstore');
+mongoose.connect('mongodb://root:root@ds133582.mlab.com:33582/bookstore');
 const db = mongoose.connection;
 
 app.get('/api/genres', (req, res) => {
@@ -84,6 +85,17 @@ app.get('/api/books', (req, res) => {
 			throw err;
 		}
 		res.json(books);
+	});
+});
+
+app.get('/api/google/books/', function (req, res) {
+	const name = req.query.searchTerm;
+	booksSearch.search(name, function (error, results) {
+		if (error) {
+			console.log(error);
+		}
+		Book.addBooks(results);
+		res.send(results);
 	});
 });
 
