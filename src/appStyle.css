@@ -1,0 +1,34 @@
+#addMovie: {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#addMovie, input {
+	width: 50%;
+	margin-bottom: 2em;
+}
+
+#addMovie, label {
+	width: 20em;
+	display: block;
+}
+
+/*.app {
+	float: top;
+	background: blue;
+}
+*/
+
+.addForm {
+	background: blue;
+}
+/*
+div .test {
+	background: blue;
+}*/
+
+.test > h2 {
+	top: 0;
+	position: relative;
+	margin-top: 0em;
+}
