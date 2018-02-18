@@ -10,10 +10,5 @@ npm install
 ```
 nodemon app
 ```
-## Run MongoDB in CLI
-```
-mongo
-```
-
-## Import DB
-``` mongorestore -d bookstore <directory_backup>```
+## MLab
+* Sign up for MLab and configure the mongo URL in config/dev.js
