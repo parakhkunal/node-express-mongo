@@ -53,14 +53,11 @@ module.exports.getBooks = (callback, limit) => {
 
 // Get Book
 module.exports.getBookById = (id, callback) => {
-	// Book.findById(id, callback);
-	console.log(id);
     Book.findOne({ googleBookId : id }, callback);
 }
 
 // Add Book
 module.exports.addBook = (book, callback) => {
-	console.log(book);return false;
 	Book.create(book, callback);
 }
 
@@ -81,28 +78,34 @@ module.exports.addBooks = (results, callback) => {
 			'images': book.images,
 			'language': book.language
 		};
-		Book.create(mongoBook, callback);
+		Book.findOne({ googleBookId : book.id }).then(existingBook => {
+			if (existingBook) return;
+			Book.create(mongoBook, callback);
+		});
 	});
 }
 
 // Update Book
 module.exports.updateBook = (id, book, options, callback) => {
-	const query = {_id: id};
+	const query = {googleBookId: id};
 	const update = {
 		title: book.title,
-		genre: book.genre,
+		authors: book.authors,
 		description: book.description,
-		author: book.author,
+		genre: 'Thriller',
 		publisher: book.publisher,
-		pages: book.pages,
-		image_url: book.image_url,
-		buy_url: book.buy_url
+		averageRating: book.averageRating,
+		maturityRating: book.maturityRating,
+		pageCount: book.pageCount,
+		link: book.link,
+		images: book.images,
+		language: book.language
 	};
 	Book.findOneAndUpdate(query, update, options, callback);
 }
 
 // Delete Book
 module.exports.deleteBook = (id, callback) => {
-	const query = {_id: id};
+	const query = {googleBookId: id};
 	Book.remove(query, callback);
 }

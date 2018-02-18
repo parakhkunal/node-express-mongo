@@ -8,22 +8,15 @@ const path = require('path');
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const keys = require('./config/keys');
-const logger = new winston.Logger({
-    transports: [new winston.transports.Console(), new winston.transports.File({ filename: './logs/api.log' })]
-});
 
 //middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'client')));
 app.use(expressWinston.logger({
   transports: [
     new winston.transports.Console({
       json: true,
       colorize: true
-    }),
-    new winston.transports.File({
-    	filename: './logs/api.log'
     })
   ],
   meta: true, // optional: control whether you want to log the meta data about the request (default to true)
@@ -37,8 +30,6 @@ Book = require('./models/books');
 
 //connection to mongoose
 mongoose.connect(keys.mongoose.uri);
-// mongoose.connect('mongodb://root:root@ds133582.mlab.com:33582/bookstore');
-const db = mongoose.connection;
 
 app.get('/api/genres', (req, res) => {
 	Genre.getGenres((err, genres) => {
@@ -90,9 +81,9 @@ app.get('/api/books', (req, res) => {
 	});
 });
 
-app.get('/api/google/books/', function (req, res) {
+app.get('/api/google/books/', (req, res) => {
 	const name = req.query.searchTerm;
-	booksSearch.search(name, function (error, results) {
+	booksSearch.search(name, (error, results) => {
 		if (error) {
 			console.log(error);
 		}
@@ -102,9 +93,7 @@ app.get('/api/google/books/', function (req, res) {
 });
 
 app.get('/api/books/:_id', (req, res) => {
-	console.log("meow");
 	Book.getBookById(req.params._id, (err, book) => {
-		console.log(book);
 		if(err) {
 			throw err;
 		}

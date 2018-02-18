@@ -1,301 +1,220 @@
 {
-	"id": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-	"name": "BookStore",
-	"description": "",
-	"order": [
-		"3453b8ab-957b-3ef6-f0bc-486803f5db26",
-		"49a1c23a-3cad-50e6-69e6-03484ff5588d",
-		"382eed98-752e-2b71-eb30-ab775e5e5690",
-		"631661a4-ccdd-5284-35e1-2daadb11f944",
-		"948959b8-caf3-e0ea-6e3a-d05932800f3e",
-		"2aece92e-f929-3a40-62a8-4e7efb9cf81c",
-		"94e00963-b7f6-5774-fb26-a1cb9f9f84b6",
-		"f670c5b5-6281-0464-f78a-1be855e5a5de",
-		"8af22d3d-d32d-c706-fbcd-95d04f1ef304"
-	],
-	"folders": [],
-	"folders_order": [],
-	"timestamp": 1518333989691,
-	"owner": 0,
-	"public": false,
-	"requests": [
+	"variables": [],
+	"info": {
+		"name": "BookStore",
+		"_postman_id": "d3c52c37-7014-6f1a-6b51-60517f9b0c55",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "2aece92e-f929-3a40-62a8-4e7efb9cf81c",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/genres/5a7fe776847df2a9e2fcfc95",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "PUT",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
-			"name": "Update Genre",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518334685378,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"name\": \"Horror\"\n}"
-		},
-		{
-			"id": "3453b8ab-957b-3ef6-f0bc-486803f5db26",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/genres",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "POST",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
 			"name": "Add Genre",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518333992369,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"name\": \"Romance\"\n}"
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Romance\"\n}"
+				},
+				"url": "http://localhost:3010/api/genres",
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "382eed98-752e-2b71-eb30-ab775e5e5690",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/books",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "POST",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
-			"name": "Add Book",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518334368731,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
-		},
-		{
-			"id": "49a1c23a-3cad-50e6-69e6-03484ff5588d",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/genres",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
 			"name": "Get Genres",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518334015457,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"name\": \"Romance\"\n}"
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Romance\"\n}"
+				},
+				"url": "http://localhost:3010/api/genres",
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "631661a4-ccdd-5284-35e1-2daadb11f944",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/books",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
+				},
+				"url": "http://localhost:3010/api/books",
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Get Books",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518334384156,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
+				},
+				"url": "http://localhost:3010/api/books",
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "8af22d3d-d32d-c706-fbcd-95d04f1ef304",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/books/5a7fe95d847df2a9e2fcfc97",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "DELETE",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
-			"name": "Delete Book",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518335586059,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": ""
-		},
-		{
-			"id": "948959b8-caf3-e0ea-6e3a-d05932800f3e",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/books/5a7fe95d847df2a9e2fcfc97",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
 			"name": "Get Book By Id",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518334425312,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
+				},
+				"url": "http://localhost:3010/api/books/1zC-xOnvBg4C",
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "94e00963-b7f6-5774-fb26-a1cb9f9f84b6",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/books/5a7fe95d847df2a9e2fcfc97",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1518335119149,
+			"name": "Update Genre",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Horror\"\n}"
+				},
+				"url": "http://localhost:3010/api/genres/5a7fe776847df2a9e2fcfc95",
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Update Book",
-			"description": "",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"responses": [],
-			"rawModeData": "{\n\t\"title\": \"Murder House\"\n}"
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"authors\": [\n            \"Dan Brown\"\n        ],\n        \"createdDate\": \"2018-02-18T01:07:00.331Z\",\n        \"_id\": \"5a88d1b4e9e7d921a387bdec\",\n        \"googleBookId\": \"1zC-xOnvBg4C\",\n        \"title\": \"Deception Point 123\",\n        \"description\": \"On the eve of a presidential race in which NASA's budget is a pivotal issue, the space agency announces the discovery of an ancient meteorite filled with fossils deep in the Arctic ice.\",\n        \"publisher\": \"Simon and Schuster\",\n        \"averageRating\": 3.5,\n        \"maturityRating\": \"NOT_MATURE\",\n        \"pageCount\": 464,\n        \"link\": \"https://books.google.com/books/about/Deception_Point.html?hl=&id=1zC-xOnvBg4C\",\n        \"language\": \"en\",\n        \"__v\": 0\n    }"
+				},
+				"url": "http://localhost:3010/api/books/1zC-xOnvBg4C",
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "f670c5b5-6281-0464-f78a-1be855e5a5de",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:3010/api/genres/5a7fe776847df2a9e2fcfc95",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "DELETE",
-			"collectionId": "d72e5064-12f4-bd27-0c2e-5ea6255b6882",
-			"data": [],
-			"dataMode": "raw",
 			"name": "Delete Genre",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1518335310350,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": ""
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:3010/api/genres/5a7fe776847df2a9e2fcfc95",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:3010/api/books/9QH-jwEACAAJ",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books from Google API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Pride and Prejudice\",\n\t\"genre\": \"Romance\",\n\t\"description\": \"Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.\",\n\t\"author\": \"foo\",\n\t\"publisher\": \"bar\",\n\t\"pages\": \"400\",\n\t\"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/220px-PrideAndPrejudiceTitlePage.jpg\",\n\t\"buy_url\": \"https://en.wikipedia.org/wiki/Pride_and_Prejudice\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3010/api/google/books?searchTerm=Dan Brown",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"google",
+						"books"
+					],
+					"query": [
+						{
+							"key": "searchTerm",
+							"value": "Dan Brown",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
