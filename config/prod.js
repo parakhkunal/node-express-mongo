@@ -1,3 +1,5 @@
-/**
- * Created by Gaurav on 2/17/18.
- */
+module.exports = {
+    "mongoose":{
+        "uri" : ""
+    }
+};
